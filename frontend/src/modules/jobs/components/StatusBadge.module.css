@@ -1,0 +1,49 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.queued {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+
+.processing {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+.processing::before {
+  animation: blink 1s ease-in-out infinite;
+}
+
+.done {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.failed {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}

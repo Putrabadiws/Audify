@@ -1,0 +1,51 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 3px 1px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chip.static {
+  padding-right: 9px;
+}
+
+.remove,
+.remove:hover:not(:disabled) {
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding: 0 4px;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.6;
+  font-size: 1rem;
+}
+
+.remove:hover:not(:disabled) {
+  opacity: 1;
+  color: var(--danger);
+}
+
+/* left padding lines the chips up with the title (20px page gutter + 32px back button + 12px gap) */
+.editor {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 20px 12px 64px;
+}
+
+.input {
+  border: 1px dashed var(--border-strong);
+  background: none;
+  padding: 1px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  width: 110px;
+}

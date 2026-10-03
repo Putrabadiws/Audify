@@ -1,0 +1,15 @@
+.frame {
+  padding: 12px 16px 4px;
+}
+
+/* letterboxed: portrait phone videos must not push the summary tabs off-screen */
+.video {
+  display: block;
+  width: 100%;
+  max-height: 40vh;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: var(--radius);
+  background: #000;
+  cursor: pointer;
+}

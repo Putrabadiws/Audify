@@ -1,0 +1,75 @@
+/* left column (was right: border-left) — the transcript sits to its right */
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+/* `display: flex` above would override the [hidden] attribute (collapsed panel with a video) */
+.panel[hidden] {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px 4px;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.info {
+  padding: 12px 20px 24px;
+}
+
+.list {
+  margin: 0;
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row dt {
+  color: var(--text-muted);
+}
+
+.row dd {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.vocab h3 {
+  margin: 18px 0 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+}
+
+.vocab p {
+  margin: 0;
+  font-size: 0.88rem;
+}

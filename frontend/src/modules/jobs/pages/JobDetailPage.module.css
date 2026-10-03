@@ -1,0 +1,151 @@
+/* flex, not a fixed grid: optional rows (re-transcribe panel, errors) come and go, and a
+   fixed grid-template-rows would shift the player bar off the bottom when they're absent */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px 8px;
+}
+
+.back {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: background 0.15s var(--ease);
+}
+
+.back:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.titleBlock {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  width: 100%;
+  padding: 2px 6px;
+  margin-left: -6px;
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  background: none;
+  border-color: transparent;
+}
+
+.title:hover {
+  border-color: var(--border);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.toggleOn,
+.toggleOn:hover:not(:disabled) {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  border-color: transparent;
+}
+
+.inlineError {
+  margin: 0 20px 8px;
+}
+
+.columns {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--border);
+}
+
+/* transcript | side panel; the panel is optional */
+/* Update: side panel | transcript — the panel (video + summary) moved left, 2026-10-01 */
+.withPanel {
+  grid-template-columns: minmax(320px, 36%) minmax(0, 1fr);
+}
+
+.body {
+  min-height: 0;
+  overflow: auto;
+  padding: 12px 16px 28px;
+}
+
+.progress {
+  max-width: 420px;
+  margin: 72px auto;
+  text-align: center;
+}
+
+.progress progress {
+  width: 100%;
+}
+
+.message {
+  padding: 32px;
+}
+
+/* re-transcribe panel (RetranscribePanel imports these) */
+.panel {
+  margin: 0 20px 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+}
+
+.panel p {
+  margin: 0 0 8px;
+}
+
+.panelRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.grow {
+  flex: 1;
+  min-width: 200px;
+}

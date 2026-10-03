@@ -1,0 +1,38 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Secrets / local env — never commit (backend reads backend/.env)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+dist/
+coverage/
+
+# Logs
+*.log
+
+# Runtime data: SQLite DB + uploaded media (user recordings — private, can be GBs)
+backend/data/
+*.db
+*.db-shm
+*.db-wal
+
+# Local-only reference material (feature/UI notes + screenshots) — not part of the product repo
+feature-map.md
+ui-map.md
+screenshots/

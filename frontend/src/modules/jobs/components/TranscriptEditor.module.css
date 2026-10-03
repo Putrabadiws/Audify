@@ -1,0 +1,88 @@
+.transcript {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* each segment is a soft card; hover reveals the tool strip (segment toolbar) */
+.segment {
+  padding: 10px 14px 12px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition:
+    background 0.15s var(--ease),
+    border-color 0.15s var(--ease);
+}
+
+.segment:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border);
+}
+
+.active,
+.active:hover {
+  background: var(--accent-soft);
+  border-color: transparent;
+}
+
+.segmentHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 22px;
+  margin-bottom: 2px;
+}
+
+.time {
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding: 0;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.time:hover:not(:disabled) {
+  background: none;
+  color: var(--accent-text);
+}
+
+.active .time {
+  color: var(--accent-text);
+}
+
+.tools {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
+}
+
+.tools button {
+  padding: 4px;
+  color: var(--text-muted);
+}
+
+.segment:hover .tools,
+.segment:focus-within .tools {
+  opacity: 1;
+}
+
+.text {
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.editor {
+  width: 100%;
+  resize: vertical;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
