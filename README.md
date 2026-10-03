@@ -13,6 +13,19 @@ Masalah yang diselesaikan: rekaman meeting yang panjang susah direkap. Alurnya: 
 - Search judul + isi transkrip, tag, export TXT / SRT / VTT / Markdown / JSON
 - Tema terang/gelap
 
+## Tech stack
+
+| Lapisan | Teknologi |
+|---|---|
+| **Speech-to-text** | Whisper large-v3-turbo via **faster-whisper** 1.2 (CTranslate2, `int8`, CPU, VAD Silero) |
+| **AI summary** | **Ollama** 0.34 + **Qwen 3.5 4B** (`qwen3.5:4b`, Metal GPU) — map-reduce untuk transkrip panjang |
+| **Media** | ffmpeg / ffprobe 9.0 — transcode audio playback, durasi, deteksi video |
+| **Backend** | Python 3.12 · **FastAPI** 0.141 + Uvicorn · SQLAlchemy 2.1 · **SQLite** (WAL) · Pydantic 2 · httpx |
+| **Frontend** | **React** 19 · **Vite** 8 · TypeScript 6 · TanStack React Query 5 · React Router 7 · zod 4 · react-markdown · lucide-react · CSS Modules |
+| **Test & lint** | pytest + ruff (backend) · Vitest + Testing Library + oxlint (frontend) |
+
+Semua open-source dan jalan lokal — tanpa API berbayar. Detail versi & peran tiap komponen: [docs/architecture](docs/architecture/README.md#tech-stack).
+
 ## Struktur repo
 
 | Folder | Isi |
